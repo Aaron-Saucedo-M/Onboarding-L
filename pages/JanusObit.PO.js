@@ -16,6 +16,7 @@ module.exports = {
     },
 
     /**
+     * Function to submit a guest book entry - All parameters default to 'Test'
      * @param {Object} information
      * @param {string} information.message - String for message field, default is 'Test'
      * @param {string} information.from - String for from field, default is 'Test'
