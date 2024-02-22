@@ -10,21 +10,22 @@ setCommonPlugins();
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
-  tests: './test/*_test.spec.js',
-  output: './output',
-  helpers: {
-    WebDriver: {
-      url: process.env.URL,
-      browser: 'chrome',
-      desiredCapabilities: {
-        chromeOptions: {
-          args: ['--incognito'],
+    tests: './test/*_test.spec.js',
+    output: './output',
+    helpers: {
+        WebDriver: {
+            url: process.env.URL,
+            browser: 'chrome',
+            desiredCapabilities: {
+                chromeOptions: {
+                    args: ['--incognito', 'window-size=1920,1080'],
+                },
+            },
         },
-      },
     },
-  },
-  include: {
-    I: './steps_file.js',
-  },
-  name: 'Onboarding-L',
+    include: {
+        I: './steps_file.js',
+        janusObitPage: './pages/JanusObit.PO.js',
+    },
+    name: 'Onboarding-L',
 };
