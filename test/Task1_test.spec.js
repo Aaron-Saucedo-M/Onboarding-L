@@ -19,4 +19,9 @@ Scenario('Task 1 - Leave Guest Book Entry', async ({ I, janusObitPage }) => {
 
     // Fill and submit guestbook form
     janusObitPage.createGuestBookEntry();
-}).tag('Webdriver').tag('JanusBeta').tag('ProductionSafe').tag('GuestBook').tag('NameSection');
+})
+    .tag('Webdriver')
+    .tag('JanusBeta')
+    .tag('ProductionSafe')
+    .tag('GuestBook')
+    .tag('NameSection');

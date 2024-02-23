@@ -10,7 +10,11 @@ const api = new DataTable(['url', 'statusCode']);
 api.add(['/virginia-gruchalski-obituary?pid=196167379', 200]);
 api.add(['/virginia-gruchalski-obituary?pid=0', 404]);
 
-Data(api).Scenario('Test API', async ({ I, current }) => {
-    const response = await I.sendGetRequest(current.url);
-    I.assert(response.status, current.statusCode);
-}).tag('REST').tag('ProductionSafe').tag('JanusBeta');
+Data(api)
+    .Scenario('Test API', async ({ I, current }) => {
+        const response = await I.sendGetRequest(current.url);
+        I.assert(response.status, current.statusCode);
+    })
+    .tag('REST')
+    .tag('ProductionSafe')
+    .tag('JanusBeta');
