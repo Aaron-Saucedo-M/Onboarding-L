@@ -9,8 +9,8 @@ setHeadlessWhen(process.env.HEADLESS);
 setCommonPlugins();
 
 /** @type {CodeceptJS.MainConfig} */
+
 exports.config = {
-    tests: './test/*_test.spec.js',
     output: './output',
     helpers: {
         JanusDBHelper: {
@@ -41,5 +41,47 @@ exports.config = {
         I: './steps_file.js',
         janusObitPage: './pages/JanusObit.PO.js',
     },
+    mocha: {},
+    bootstrap: null,
+    timeout: null,
+    teardown: null,
+    hooks: [],
+    gherkin: {
+        features: './features/*.feature',
+        steps: [
+            './step_definitions/guestBook.steps.js',
+            './step_definitions/rest.steps.js',
+        ],
+    },
+    plugins: {
+        screenshotOnFail: {
+            enabled: true,
+        },
+        tryTo: {
+            enabled: true,
+        },
+        retryFailedStep: {
+            enabled: true,
+        },
+        retryTo: {
+            enabled: true,
+        },
+        eachElement: {
+            enabled: true,
+        },
+        pauseOnFail: {},
+    },
+    stepTimeout: 0,
+    stepTimeoutOverride: [
+        {
+            pattern: 'wait.*',
+            timeout: 0,
+        },
+        {
+            pattern: 'amOnPage',
+            timeout: 0,
+        },
+    ],
+    tests: './test/*_test.spec.js',
     name: 'Onboarding-L',
 };
