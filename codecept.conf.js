@@ -13,6 +13,9 @@ exports.config = {
     tests: './test/*_test.spec.js',
     output: './output',
     helpers: {
+        JanusDBHelper: {
+            require: './helpers/janusDB_helper.js'
+        },
         WebDriver: {
             url: process.env.URL,
             browser: 'chrome',
