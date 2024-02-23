@@ -1,4 +1,4 @@
-Feature('Task 1');
+Feature('Task 1 - Guest Book');
 
 /**
  * @Author Aaron

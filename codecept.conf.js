@@ -14,7 +14,7 @@ exports.config = {
     output: './output',
     helpers: {
         JanusDBHelper: {
-            require: './helpers/janusDB_helper.js'
+            require: './helpers/janusDB_helper.js',
         },
         WebDriver: {
             url: process.env.URL,
@@ -24,6 +24,17 @@ exports.config = {
                     args: ['--incognito', 'window-size=1920,1080'],
                 },
             },
+        },
+        REST: {
+            endpoint:
+                'https://www.qa-legacy.com/us/obituaries/chicagotribune/name',
+            prettyPrintJson: true,
+            onRequest: (request) => {
+                request.headers.auth = '123';
+            },
+        },
+        AssertWrapper: {
+            require: 'codeceptjs-assert',
         },
     },
     include: {

@@ -19,6 +19,7 @@
     "homepage": "https://github.com/Aaron-Saucedo-M/Onboarding-L#readme",
     "devDependencies": {
         "codeceptjs": "^3.5.14",
+        "codeceptjs-assert": "^0.0.5",
         "dotenv": "^16.4.5",
         "mssql": "^10.0.2",
         "webdriverio": "^8.32.3"
