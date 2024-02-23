@@ -13,4 +13,4 @@ api.add(['/virginia-gruchalski-obituary?pid=0', 404]);
 Data(api).Scenario('Test API', async ({ I, current }) => {
     const response = await I.sendGetRequest(current.url);
     I.assert(response.status, current.statusCode);
-});
+}).tag('REST').tag('ProductionSafe').tag('JanusBeta');

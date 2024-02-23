@@ -4,7 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "npx codeceptjs run",
+        "janusBeta": "npx codeceptjs run --grep 'JanusBeta'",
+        "webdriver": "npx codeceptjs run --grep 'Webdriver'",
+        "rest": "npx codeceptjs run --grep 'REST'",
+        "prodSafe": "npx codeceptjs run --grep 'ProductionSafe'"
     },
     "repository": {
         "type": "git",
